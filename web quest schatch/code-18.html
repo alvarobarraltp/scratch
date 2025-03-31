@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebQuest: Animación y Lógica - LTP Río Bueno</title>
+    <style>
+        /* --- Estilos Generales --- */
+        body { margin: 0; padding: 20px; background-color: #f0f2f5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .webquest-container { max-width: 950px; margin: 30px auto; background: linear-gradient(135deg, #ffffff, #eef2f7); border: 2px solid #fd7e14; border-radius: 15px; padding: 25px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); overflow: hidden; }
+        .logo-container { text-align: center; margin-bottom: 20px; }
+        h1 { color: #fd7e14; text-align: center; border-bottom: 3px solid #0d6efd; padding-bottom: 10px; font-size: 2.2em; margin-top: 0; margin-bottom: 30px; }
+        /* --- Estilos para las Pestañas (Tabs - CON COLORES INDIVIDUALES) --- */
+        .tab-buttons { display: flex; flex-wrap: wrap; margin-bottom: 20px; border-bottom: 2px solid #dee2e6; }
+        .tab-button { padding: 12px 20px; cursor: pointer; border: none; margin-right: 5px; margin-bottom: -2px; border-radius: 8px 8px 0 0; font-size: 1em; font-weight: bold; color: #ffffff; transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, filter 0.3s ease; border: 2px solid transparent; border-bottom: 2px solid #dee2e6; }
+        .tab-button:nth-child(1) { background-color: #0d6efd; } /* Azul */
+        .tab-button:nth-child(2) { background-color: #6f42c1; } /* Morado */
+        .tab-button:nth-child(3) { background-color: #198754; } /* Verde */
+        .tab-button:nth-child(4) { background-color: #dc3545; } /* Rojo */
+        .tab-button:nth-child(5) { background-color: #ffc107; color: #343a40;} /* Amarillo (texto oscuro) */
+        .tab-button:nth-child(6) { background-color: #0dcaf0; color: #343a40;} /* Cyan (texto oscuro) */
+        .tab-button:nth-child(7) { background-color: #6c757d; } /* Gris */
+        .tab-button:hover { filter: brightness(1.15); }
+        .tab-button.active { background-color: #ffffff; color: #fd7e14; border: 2px solid #dee2e6; border-bottom: 2px solid #ffffff; position: relative; z-index: 1; filter: none; }
+        .tab-button:nth-child(5).active, .tab-button:nth-child(6).active { color: #fd7e14; }
+
+        /* --- Estilos para el Contenido de las Pestañas (Panels) --- */
+        .tab-content { padding-top: 20px; }
+        .tab-pane { display: none; animation: fadeIn 0.5s ease; background-color: #ffffff; border: 1px solid #dee2e6; border-radius: 0 0 10px 10px; padding: 25px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+        .tab-pane.active { display: block; }
+        /* --- Estilos Contenido Interno --- */
+        .tab-pane h2 { font-size: 1.8em; margin-top: 0; color: #0d6efd; border-bottom: 2px solid #ffc107; padding-bottom: 5px; margin-bottom: 20px; }
+        .tab-pane p, .tab-pane ul, .tab-pane ol, .tab-pane table { font-size: 1.05em; line-height: 1.7; color: #343a40; }
+        .tab-pane ul, .tab-pane ol { padding-left: 35px; }
+        .tab-pane li { margin-bottom: 12px; }
+        .tab-pane strong { color: #fd7e14; }
+        .tab-pane code { background-color: #e9ecef; padding: 2px 5px; border-radius: 4px; font-family: monospace; color: #0d6efd; }
+        .tab-pane table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .tab-pane th, .tab-pane td { padding: 12px 15px; border: 1px solid #dee2e6; vertical-align: top; text-align: left; }
+        .tab-pane thead tr { background-color: #fd7e14; color: white; }
+        .tab-pane tbody tr:nth-child(even) { background-color: #f8f9fa; }
+        .tab-pane a { color: #0a58ca; text-decoration: none; font-weight: bold; }
+        .tab-pane a:hover { text-decoration: underline; }
+        .tab-pane .table-responsive { overflow-x: auto; }
+
+        /* Estilo para el contenedor del iframe */
+        .iframe-container { position: relative; overflow: hidden; width: 100%; padding-top: 75%; margin-top: 20px; border: 1px solid #ccc; }
+        .iframe-container iframe { position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; border: none; }
+
+        /* --- Animación y Footer --- */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .footer-note { margin-top: 30px; text-align: center; font-size: 0.9em; color: #6c757d; }
+    </style>
+</head>
+<body>
+
+<div class="webquest-container">
+
+    <!-- ========= LOGO ========= -->
+    <div class="logo-container">
+        <img src="input_file_0.png" alt="Logo Liceo Técnico Profesional Río Bueno" width="120">
+    </div>
+    <!-- ======================== -->
+
+    <h1>🚀 WebQuest: ¡Programa tu Desafío de Obstáculos con Scratch! (En Parejas) 🎮🧠</h1>
+
+    <!-- Botones de las Pestañas -->
+    <div class="tab-buttons">
+        <button class="tab-button active" data-tab="introduccion">✨ Introducción LTP</button>
+        <button class="tab-button" data-tab="tarea">🎯 Misión: ¡Supera el Reto!</button>
+        <button class="tab-button" data-tab="proceso">👣 Pasos de Creación</button>
+        <button class="tab-button" data-tab="recursos">📚 Caja de Bloques</button>
+        <button class="tab-button" data-tab="evaluacion">📊 Revisión del Equipo</button>
+        <button class="tab-button" data-tab="quiz">🧩 Quiz Rápido</button>
+        <button class="tab-button" data-tab="conclusion">🏁 Conclusiones</button>
+    </div>
+
+    <!-- Contenido de las Pestañas -->
+    <div class="tab-content">
+
+        <!-- Panel Introducción -->
+        <div id="introduccion" class="tab-pane active">
+            <h2>✨ ¡De la Lógica al Juego: Programando Desafíos!</h2>
+            <p>¡Saludos, futuros técnicos y profesionales del LTP Río Bueno! Saben que planificar, seguir secuencias y pensar lógicamente son claves en sus áreas. Hoy, usaremos <strong>Scratch</strong>, una herramienta visual para programar, como un gimnasio para nuestro cerebro.</p>
+            <p><strong>¿Cómo se conecta esto con las matemáticas?</strong> ¡Muchísimo! Al crear esta animación de obstáculos:</p>
+            <ul style="list-style-type: '🧠 '; padding-left: 30px;">
+                <li><strong>Manejarán Coordenadas (X, Y):</strong> Controlar la posición horizontal (<code>x</code>) y vertical (<code>y</code>) de su personaje es como trabajar en un <strong>plano cartesiano</strong>, ¡pura geometría y pre-álgebra!</li>
+                <li><strong>Usarán Números y Operaciones:</strong> Ajustar la velocidad (<code>cambiar x por 10</code> vs <code>cambiar x por 5</code>) o la altura del salto (<code>cambiar y por 50</code> vs <code>cambiar y por 70</code>) es experimentar con <strong>cantidades y sus efectos</strong>, como variar parámetros en una fórmula.</li>
+                <li><strong>Aplicarán Lógica Secuencial:</strong> El orden de los bloques es crucial. Para saltar, primero hay que subir (<code>cambiar y</code> positivo) y *luego* bajar (<code>cambiar y</code> negativo). Esta necesidad de <strong>ordenar pasos lógicamente</strong> es igual que resolver un problema matemático paso a paso o seguir un algoritmo técnico.</li>
+                <li><strong>Resolverán Problemas (Debugging):</strong> Cuando algo no funcione (el personaje no salta bien, se mueve al revés), tendrán que analizar qué bloque está mal o falta. ¡Eso es <strong>identificar errores lógicos</strong>, como encontrar un fallo en un cálculo o procedimiento!</li>
+            </ul>
+            <p>Trabajarán <strong>en parejas</strong> para discutir estas ideas, probar soluciones y ayudarse mutuamente. No necesitan ser expertos ni en programación ni en matemáticas, ¡lo importante es explorar y ver cómo estas áreas se relacionan a través de la acción!</p>
+            <p>¿Listos para poner su pensamiento matemático y lógico a prueba de forma creativa? ¡Demuestren sus habilidades en equipo! 🧑‍💻👩‍💻</p>
+        </div>
+
+        <!-- Panel Tarea -->
+        <div id="tarea" class="tab-pane">
+             <h2>🎯 Misión: ¡Supera el Reto! (Estilo Plataformas)</h2>
+             <p><strong>En parejas</strong>, su misión es crear una animación simple en Scratch donde:</p>
+             <ul style="list-style-type: '➡️ '; padding-left: 30px;">
+                 <li>Haya un <strong>personaje principal</strong> (sprite) que puedan controlar.</li>
+                 <li>El personaje pueda <strong>moverse a la izquierda y derecha</strong> usando las teclas de flecha.</li>
+                 <li>El personaje pueda realizar un <strong>salto simple</strong> al presionar la barra espaciadora (o la flecha arriba).</li>
+                 <li>Exista al menos un <strong>obstáculo estático</strong> en el escenario (puede ser otro sprite o parte del fondo).</li>
+                 <li>El <strong>objetivo</strong> sea poder mover al personaje y hacerlo saltar para <strong>superar visualmente</strong> el obstáculo.</li>
+             </ul>
+             <p>Para lograrlo, necesitarán experimentar principalmente con bloques de:</p>
+             <ul style="list-style-type: '🛠️ '; padding-left: 30px;">
+                 <li><strong>Eventos:</strong> Para detectar cuándo se presionan las teclas (<code>al presionar tecla [...]</code>).</li>
+                 <li><strong>Movimiento:</strong> Para cambiar la posición X (<code>cambiar x por [...]</code>) e Y (<code>cambiar y por [...]</code>) del personaje.</li>
+                 <li><strong>Control (Opcional):</strong> Quizás usar <code>esperar [...] segundos</code> o <code>repetir [...]</code> para ajustar el salto.</li>
+                 <li><strong>Apariencia (Opcional):</strong> Para cambiar el disfraz del personaje al moverse o saltar.</li>
+             </ul>
+             <p><strong>Colaboren, planifiquen los movimientos y prueben hasta que su personaje pueda superar el desafío.</strong></p>
+         </div>
+
+        <!-- Panel Proceso -->
+        <div id="proceso" class="tab-pane">
+              <h2>👣 Pasos de Creación (En Equipo)</h2>
+              <p>¡Manos a la obra! Sigan estos pasos trabajando juntos:</p>
+              <ol>
+                  <li><strong>Fase 1: Preparando el Escenario 🎬 (Juntos)</strong><br>Abran <a href="https://scratch.mit.edu/projects/editor/" target="_blank">Scratch</a>. Elijan personaje y fondo. Decidan juntos el aspecto inicial.</li>
+                  <li><strong>Fase 2: Movimiento Horizontal ↔️ (Programen en Pareja)</strong><br>Usen Eventos y Movimiento (<code>al presionar tecla</code>, <code>cambiar x por</code>). Prueben juntos.</li>
+                  <li><strong>Fase 3: ¡A Saltar! ⬆️⬇️ (El Reto Lógico)</strong><br>Usen Eventos y Movimiento (<code>cambiar y por</code> positivo y negativo). Experimenten con <code>repetir</code> para suavizar.</li>
+                  <li><strong>Fase 4: El Obstáculo 🧱 (Diseñen Juntos)</strong><br>Añadan un sprite o dibujen el obstáculo. Ubíquenlo estratégicamente.</li>
+                  <li><strong>Fase 5: ¡Superando el Desafío! ▶️ (Prueben y Ajusten)</strong><br>Prueben todo. Ajusten números (salto, velocidad). Depuren errores como equipo.</li>
+                  <li><strong>Fase 6 (Opcional): ¿Qué Pasa si Choca? 🤔</strong><br>Exploren bloques <code>si entonces</code> y <code>¿tocando?</code> para detectar colisiones.</li>
+                  <li><strong>Fase 7: Guardando su Creación 💾 (Ambos Comprenden)</strong><br>Guarden el proyecto. Asegúrense de que ambos entienden el código.</li>
+              </ol>
+         </div>
+
+        <!-- Panel Recursos -->
+        <div id="recursos" class="tab-pane">
+             <h2>📚 Caja de Bloques y Ayudas</h2>
+             <p>Estos bloques y enlaces serán sus mejores aliados:</p>
+             <ul style="list-style-type: '🧱 '; padding-left: 30px;">
+                 <li><strong>Plataforma y Tutoriales:</strong>
+                     <ul>
+                         <li><a href="https://scratch.mit.edu/projects/editor/" target="_blank">Editor Online de Scratch</a></li>
+                         <li><a href="https://scratch.mit.edu/ideas" target="_blank">Página de Ideas de Scratch</a> (Busquen tutoriales de "Juego de Plataformas" o "Animación")</li>
+                         <li>Busquen en YouTube: "Scratch tutorial mover personaje teclado", "Scratch saltar personaje".</li>
+                     </ul>
+                 </li>
+                  <li><strong>Bloques Clave para la Misión:</strong>
+                     <ul>
+                         <li>Eventos: <code>al presionar tecla [ v]</code> (para flechas y espacio)</li>
+                         <li>Movimiento: <code>cambiar x por [ ]</code> (para moverse izq/der), <code>cambiar y por [ ]</code> (para saltar arriba/abajo), <code>ir a x:[ ] y:[ ]</code> (para posición inicial, opcional)</li>
+                         <li>Control: <code>repetir [ ] veces</code> (para suavizar salto), <code>esperar [ ] segundos</code> (opcional, para timing), <code>si [ ] entonces</code> (opcional, para colisión)</li>
+                         <li>Sensores: <code>¿tecla [ v] presionada?</code> (alternativa a eventos), <code>¿tocando [ v]?</code> (opcional, para colisión)</li>
+                     </ul>
+                 </li>
+                  <li><strong>Conceptos Matemáticos Clave:</strong>
+                      <ul>
+                         <li><strong>Coordenadas Cartesianas:</strong> El escenario de Scratch es un plano X,Y. El centro es (0,0). X controla la posición horizontal (positivo=derecha, negativo=izquierda). Y controla la vertical (positivo=arriba, negativo=abajo). ¡Entender esto es fundamental!</li>
+                         <li><strong>Números Positivos y Negativos:</strong> Para indicar dirección en X e Y.</li>
+                         <li><strong>Secuencias:</strong> El orden en que ponen los bloques importa mucho, especialmente en el salto (subir ANTES de bajar).</li>
+                      </ul>
+                  </li>
+             </ul>
+         </div>
+
+        <!-- Panel Evaluación -->
+        <div id="evaluacion" class="tab-pane">
+              <h2>📊 Revisión del Desafío en Equipo</h2>
+              <p>Evaluaremos cómo abordaron el desafío como pareja, enfocándonos en la aplicación de la lógica y la colaboración.</p>
+              <div class="table-responsive">
+                 <table>
+                     <thead>
+                         <tr>
+                             <th>Aspecto del Desafío</th>
+                             <th>¡Logrado! ✅</th>
+                             <th>En Desarrollo 🟡</th>
+                             <th>Necesita Mejorar 🛠️</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                             <td><strong>Movimiento Horizontal (Teclado)</strong></td>
+                             <td>El equipo programó el movimiento izquierda/derecha del personaje usando las teclas.</td>
+                             <td>El movimiento funciona parcialmente o tiene errores notorios.</td>
+                             <td>No lograron implementar el movimiento horizontal controlado por teclas.</td>
+                         </tr>
+                          <tr>
+                             <td><strong>Mecánica de Salto (Teclado)</strong></td>
+                             <td>El equipo implementó una función de salto (subir y bajar) al presionar una tecla.</td>
+                             <td>El salto funciona pero es poco controlado, muy rápido/lento o no siempre se completa.</td>
+                             <td>No lograron implementar la mecánica de salto.</td>
+                         </tr>
+                          <tr>
+                             <td><strong>Presencia de Obstáculo y Desafío</strong></td>
+                             <td>Hay al menos un obstáculo claro y el personaje debe saltar para superarlo.</td>
+                             <td>Hay un obstáculo, pero no presenta un desafío real o está mal posicionado.</td>
+                             <td>No incluyeron un obstáculo en el escenario.</td>
+                         </tr>
+                          <tr>
+                             <td><strong>Funcionalidad General y Lógica</strong></td>
+                             <td>El personaje puede ser controlado para intentar superar el obstáculo. Se ve una secuencia lógica en el código.</td>
+                             <td>El proyecto tiene varios errores que impiden jugar fluidamente o el código es difícil de seguir.</td>
+                             <td>El proyecto no es funcional o el código no tiene una lógica clara.</td>
+                         </tr>
+                          <tr>
+                             <td><strong>Colaboración y Resolución de Problemas</strong></td>
+                             <td>Se observa que trabajaron juntos, discutiendo ideas y tratando de solucionar problemas.</td>
+                             <td>Hubo algo de colaboración, pero el trabajo parece mayormente individual o hubo dificultades para resolver problemas juntos.</td>
+                             <td>Poca o ninguna evidencia de colaboración o intento de resolver problemas.</td>
+                         </tr>
+                     </tbody>
+                 </table>
+              </div>
+              <p><strong>¡El proceso de pensar, probar y ajustar juntos es tan importante como el resultado final!</strong></p>
+         </div>
+
+        <!-- Panel Quiz -->
+        <div id="quiz" class="tab-pane">
+             <h2>🧩 Quiz Rápido: ¿Cuánto Aprendiste?</h2>
+             <p>¡Es hora de poner a prueba aquí mismo lo que has explorado sobre Scratch y sus bloques!</p>
+             <p>Completa el siguiente quiz interactivo para reforzar algunos conceptos clave. ¡Mucha suerte!</p>
+             <div class="iframe-container">
+                 <iframe allow="fullscreen; autoplay;" allowfullscreen width="795" height="690" frameborder="0" src="https://es.educaplay.com/juego/19883433-quiz_sobre_scratch.html"></iframe>
+             </div>
+             <p style="margin-top: 15px; font-size: 0.9em; text-align: center; color: #6c757d;">(Actividad de Educaplay insertada)</p>
+        </div>
+
+        <!-- Panel Conclusión -->
+        <div id="conclusion" class="tab-pane">
+            <h2>🏁 Del Código al Juego: ¡Pensamiento en Acción!</h2>
+            <p>¡Excelente trabajo, equipos! Han enfrentado el desafío de crear una animación interactiva usando <strong>Scratch</strong>. 🎉 Al programar el movimiento, el salto y los obstáculos, pusieron en práctica habilidades clave:</p>
+            <ul style="list-style-type: '✔️ '; padding-left: 30px;">
+                <li><strong>Pensamiento Lógico y Secuencial:</strong> Ordenar los bloques correctamente fue crucial, ¿verdad?</li>
+                <li><strong>Comprensión Espacial y Matemática:</strong> Usar coordenadas X,Y y ajustar números para el movimiento y salto.</li>
+                <li><strong>Resolución de Problemas:</strong> Enfrentar errores ("bugs") y encontrar soluciones (¡debugging!).</li>
+                <li><strong>Trabajo en Equipo:</strong> Comunicarse, compartir ideas y colaborar para alcanzar una meta.</li>
+            </ul>
+            <p>Estas habilidades son <strong>exactamente</strong> las que se valoran en el mundo técnico y profesional, sin importar su especialidad en el LTP. La capacidad de analizar un problema, dividirlo en partes, planificar una solución y ajustarla es universal.</p>
+            <p>Scratch es solo el comienzo. Pueden seguir explorando, añadiendo niveles, enemigos, puntajes... ¡Las posibilidades son enormes! Lo importante es que vieron cómo la <strong>lógica</strong> y las <strong>matemáticas</strong> pueden transformarse en algo dinámico y entretenido.</p>
+            <p><strong>¿Qué fue lo más desafiante? ¿Qué fue lo que más les gustó de trabajar en equipo en este proyecto?</strong> 🤔 ¡Sigan cultivando esa mente lógica y colaborativa!</p>
+        </div>
+
+    </div> <!-- Fin de tab-content -->
+
+    <!-- Footer MODIFICADO -->
+    <div class="footer-note">
+        <p><em>WebQuest para Segundo Medio - Liceo Técnico Profesional de Río Bueno.</em><br>
+           <strong>Desarrollado por el docente Alvaro Barra Saez.</strong>
+        </p>
+    </div>
+    <!-- Fin Footer MODIFICADO -->
+
+</div> <!-- Fin de webquest-container -->
+
+<script>
+    // --- Script JavaScript para las pestañas (Sin cambios) ---
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+    tabButtons.forEach(button => { button.addEventListener('click', () => { const targetTab = button.getAttribute('data-tab'); tabButtons.forEach(btn => btn.classList.remove('active')); tabPanes.forEach(pane => pane.classList.remove('active')); button.classList.add('active'); const targetPane = document.getElementById(targetTab); if (targetPane) { targetPane.classList.add('active'); } }); });
+    document.addEventListener('DOMContentLoaded', () => { if (tabButtons.length > 0 && tabPanes.length > 0) { const isActiveButton = document.querySelector('.tab-button.active'); if (!isActiveButton && tabButtons[0]) { tabButtons[0].classList.add('active'); const firstTabId = tabButtons[0].getAttribute('data-tab'); const firstPane = document.getElementById(firstTabId); if(firstPane) { firstPane.classList.add('active'); } } else if (!document.querySelector('.tab-pane.active') && isActiveButton) { const activeTabId = isActiveButton.getAttribute('data-tab'); const activePane = document.getElementById(activeTabId); if (activePane) { activePane.classList.add('active'); } } } });
+</script>
+
+</body>
+</html>
