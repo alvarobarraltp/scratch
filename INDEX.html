@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="es"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;WebQuest: Historias Interactivas con Scratch Jr. - LTP Río Bueno&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* --- Estilos Generales --- */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body { margin: 0; padding: 20px; background-color: #f0f2f5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.webquest-container { max-width: 950px; margin: 30px auto; background: linear-gradient(135deg, #ffffff, #eef2f7); border: 2px solid #fd7e14; border-radius: 15px; padding: 25px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); overflow: hidden; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.logo-container { text-align: center; margin-bottom: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1 { color: #fd7e14; text-align: center; border-bottom: 3px solid #0d6efd; padding-bottom: 10px; font-size: 2.1em; margin-top: 0; margin-bottom: 30px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* --- Estilos Tabs con Colores --- */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-buttons { display: flex; flex-wrap: wrap; margin-bottom: 20px; border-bottom: 2px solid #dee2e6; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px 18px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-right: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: -2px; /* Solapar borde inferior */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px 8px 0 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1em;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white; /* Default text color for colored buttons */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: background-color 0.2s ease, border-color 0.2s ease;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 2px solid transparent; /* Placeholder for active border */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 2px solid #dee2e6; /* Match container border */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Colores específicos para cada botón */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-button[data-tab="introduccion"] { background-color: #0d6efd; } /* Azul */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-button[data-tab="tarea"]<span class="Apple-converted-space">        </span>{ background-color: #6f42c1; } /* Morado */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-button[data-tab="proceso"]<span class="Apple-converted-space">      </span>{ background-color: #198754; } /* Verde */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-button[data-tab="recursos"] <span class="Apple-converted-space">    </span>{ background-color: #dc3545; } /* Rojo */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-button[data-tab="evaluacion"] <span class="Apple-converted-space">  </span>{ background-color: #ffc107; color: #343a40; } /* Amarillo (texto oscuro) */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-button[data-tab="conclusion"] <span class="Apple-converted-space">  </span>{ background-color: #6c757d; } /* Gris */</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Hover states - ligeramente más oscuros/claros */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-button[data-tab="introduccion"]:hover { background-color: #0b5ed7; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-button[data-tab="tarea"]:hover<span class="Apple-converted-space">        </span>{ background-color: #5a379e; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-button[data-tab="proceso"]:hover<span class="Apple-converted-space">      </span>{ background-color: #157347; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-button[data-tab="recursos"]:hover <span class="Apple-converted-space">    </span>{ background-color: #bb2d3b; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-button[data-tab="evaluacion"]:hover <span class="Apple-converted-space">  </span>{ background-color: #e0a800; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-button[data-tab="conclusion"]:hover <span class="Apple-converted-space">  </span>{ background-color: #5c636a; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Active state - Mantiene color de fondo, cambia borde inferior */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-button.active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: #dee2e6 #dee2e6 #ffffff; /* Borde superior y laterales como contenedor, inferior blanco */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-width: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-style: solid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative; /* Asegura que esté por encima */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>/* El color de fondo y texto ya están definidos por el botón específico */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Asegurar contraste texto en amarillo activo */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-button[data-tab="evaluacion"].active { color: #343a40; }</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* --- Estilos Contenido Paneles (Colores Fondo) --- */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-content { padding-top: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-pane {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: fadeIn 0.5s ease;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #dee2e6;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 0 0 10px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 8px rgba(0,0,0,0.05);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-pane.active { display: block; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#introduccion { background-color: #ffffff; } /* Blanco por caja descarga */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#tarea<span class="Apple-converted-space">        </span>{ background-color: #fce4ec; /* Rosa muy pálido */ }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#proceso<span class="Apple-converted-space">      </span>{ background-color: #e8f5e9; /* Verde muy pálido */ }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#recursos <span class="Apple-converted-space">    </span>{ background-color: #e3f2fd; /* Azul muy pálido */ }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#evaluacion <span class="Apple-converted-space">  </span>{ background-color: #fffde7; /* Amarillo muy pálido */ }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#conclusion <span class="Apple-converted-space">  </span>{ background-color: #ede7f6; /* Lavanda muy pálido */ }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* --- Estilos dentro de los paneles --- */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-pane h2 { font-size: 1.8em; margin-top: 0; color: #0d6efd; border-bottom: 2px solid #ffc107; padding-bottom: 5px; margin-bottom: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-pane p, .tab-pane ul, .tab-pane ol, .tab-pane table { font-size: 1.05em; line-height: 1.7; color: #343a40; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-pane ul, .tab-pane ol { padding-left: 35px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-pane li { margin-bottom: 12px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-pane strong { color: #fd7e14; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-pane code { background-color: #e9ecef; padding: 2px 5px; border-radius: 4px; font-family: monospace; color: #0d6efd; font-weight: bold; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-pane table { width: 100%; border-collapse: collapse; margin-top: 15px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-pane th, .tab-pane td { padding: 12px 15px; border: 1px solid #dee2e6; vertical-align: top; text-align: left; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-pane thead tr { background-color: #fd7e14; color: white; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-pane tbody tr:nth-child(even) { background-color: #f8f9fa; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-pane a { color: #0a58ca; text-decoration: none; font-weight: bold; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-pane a:hover { text-decoration: underline; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-pane .table-responsive { overflow-x: auto; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* --- Clases para Colorear Nombres de Bloques --- */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.block-trigger { color: #FFB100; /* Amarillo/Naranja */ font-weight: bold; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.block-motion<span class="Apple-converted-space">  </span>{ color: #4C97FF; /* Azul */ font-weight: bold; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.block-looks <span class="Apple-converted-space">  </span>{ color: #9966FF; /* Morado */ font-weight: bold; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.block-sound <span class="Apple-converted-space">  </span>{ color: #CF63CF; /* Magenta/Rosa */ font-weight: bold; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.block-control { color: #FFAB19; /* Naranja (similar a trigger) */ font-weight: bold; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.block-end <span class="Apple-converted-space">    </span>{ color: #FF691A; /* Rojo/Naranja */ font-weight: bold; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* --- Animación y Footer --- */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.footer-note { margin-top: 30px; text-align: center; font-size: 0.9em; color: #6c757d; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.footer-note .creator { margin-top: 5px; font-style: italic; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* --- Estilo Descarga --- */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.download-instruction { background-color: #fff3cd; border: 1px solid #ffeeba; padding: 15px; border-radius: 8px; margin-bottom: 20px; font-weight: bold; text-align: center; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.download-instruction a { color: #856404; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="webquest-container"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Logo --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="logo-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;img src="input_file_0.png" alt="Logo Liceo Técnico Profesional Río Bueno" width="120"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;🚀 WebQuest: ¡Creamos Historias Interactivas con Scratch Jr.! (En Parejas) 📱💡&lt;/h1&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Botones de las Pestañas --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="tab-buttons"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab-button active" data-tab="introduccion"&gt;✨ Introducción LTP&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab-button" data-tab="tarea"&gt;🎯 Misión Animada&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab-button" data-tab="proceso"&gt;👣 Pasos de Creación&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab-button" data-tab="recursos"&gt;📚 Bloques y Ayuda&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab-button" data-tab="evaluacion"&gt;📊 Revisión en Equipo&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab-button" data-tab="conclusion"&gt;🏁 Conclusiones&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Contenido de las Pestañas --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="tab-content"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Panel Introducción --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="introduccion" class="tab-pane active"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Contenido sin cambios --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;✨ ¡Programar es Pensar: Dando Vida a tus Ideas!&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;div class="download-instruction"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>¡Atención! Para esta actividad, necesitarán la aplicación &lt;strong&gt;Scratch Jr.&lt;/strong&gt; Es gratuita y funciona en tablets y algunos teléfonos.</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;br&gt;&lt;strong&gt;Antes de empezar, asegúrense de descargarla en sus dispositivos desde:&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;br&gt;&lt;a href="https://www.scratchjr.org/" target="_blank"&gt;Sitio Oficial de Scratch Jr. (con enlaces a las tiendas de apps)&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;p&gt;¡Hola, estudiantes del LTP Río Bueno! Como saben, en el mundo técnico, la &lt;strong&gt;lógica&lt;/strong&gt;, la &lt;strong&gt;planificación&lt;/strong&gt; y la &lt;strong&gt;resolución de problemas&lt;/strong&gt; son esenciales. Hoy usaremos &lt;strong&gt;Scratch Jr.&lt;/strong&gt;, una app muy sencilla y visual, para entrenar justamente esas habilidades.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;p&gt;Con Scratch Jr., darán instrucciones a personajes usando bloques de colores. Es más simple que Scratch normal, ideal para empezar. Al crear una pequeña animación o juego interactivo, estarán aplicando &lt;strong&gt;pensamiento matemático y computacional&lt;/strong&gt; sin darse cuenta:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;ul style="list-style-type: '🧠 '; padding-left: 30px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;li&gt;&lt;strong&gt;Planificarán Secuencias:&lt;/strong&gt; Decidir qué personaje se mueve primero, quién habla después... ¡eso es ordenar pasos lógicamente!&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;li&gt;&lt;strong&gt;Entenderán Causa y Efecto:&lt;/strong&gt; "Si toco este personaje (causa), entonces dice 'Hola' (efecto)".&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;li&gt;&lt;strong&gt;Ajustarán Parámetros:&lt;/strong&gt; Decidir cuántos pasos moverse o cuánto esperar es usar números con un propósito.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;li&gt;&lt;strong&gt;Resolverán Mini-Problemas:&lt;/strong&gt; "¿Por qué mi personaje no habla?" -&gt; ¡Revisar los bloques! (Debugging).&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;p&gt;Trabajarán &lt;strong&gt;en parejas&lt;/strong&gt; para imaginar una escena, programarla y hacerla funcionar. ¡No se necesita experiencia, solo explorar y colaborar!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;p&gt;¿Listos para combinar creatividad y lógica? ¡Vamos a crear juntos! 📱🤝&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Panel Tarea --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="tarea" class="tab-pane"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Contenido sin cambios --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;h2&gt;🎯 Misión Animada: ¡Una Escena Interactiva!&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;p&gt;&lt;strong&gt;En parejas&lt;/strong&gt;, usando la app &lt;strong&gt;Scratch Jr.&lt;/strong&gt;, su misión es crear un proyecto corto que cuente una pequeña historia o muestre una interacción simple. Su proyecto debe incluir:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;ul style="list-style-type: '➡️ '; padding-left: 30px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;li&gt;Al menos &lt;strong&gt;dos personajes&lt;/strong&gt; (sprites). Pueden elegirlos de la biblioteca o dibujarlos ustedes mismos.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;li&gt;&lt;strong&gt;Movimiento con sentido:&lt;/strong&gt; Al menos uno de los personajes debe moverse de forma lógica en la escena (ej: acercarse a otro, moverse por el escenario).&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;li&gt;&lt;strong&gt;Diálogos básicos:&lt;/strong&gt; Los personajes deben "hablar" usando los bloques de bocadillos de texto (&lt;code&gt;Decir&lt;/code&gt;).&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;li&gt;&lt;strong&gt;Comandos coherentes:&lt;/strong&gt; La secuencia de acciones y diálogos debe tener un orden lógico y empezar con un bloque de inicio (ej: &lt;code&gt;Al presionar Bandera Verde&lt;/code&gt; o &lt;code&gt;Al tocar el personaje&lt;/code&gt;).&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;li&gt;&lt;strong&gt;Una interacción simple:&lt;/strong&gt; Por ejemplo, un personaje se mueve y el otro responde, o algo sucede cuando tocas un personaje.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;p&gt;&lt;strong&gt;Ejemplos de ideas simples:&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;ul style="list-style-type: '💡 '; padding-left: 30px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;li&gt;Dos amigos se encuentran en un parque y se saludan.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;li&gt;Un gato persigue a un ratón (¡que escapa!).&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;li&gt;Un personaje le pregunta algo a otro, y el segundo responde.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;li&gt;Un coche que se mueve por una carretera y se detiene al tocar un botón (otro sprite).&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;p&gt;¡Sean creativos, pero manténganlo simple para empezar! El foco está en lograr la interacción básica y la secuencia lógica.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Panel Proceso --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="proceso" class="tab-pane"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Contenido sin cambios --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;h2&gt;👣 Pasos de Creación (En Pareja con Scratch Jr.)&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;p&gt;Sigan estos pasos en la app Scratch Jr.:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;ol&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;li&gt;&lt;strong&gt;Fase 1: Explorando la App 🧭 (Juntos)&lt;/strong&gt;&lt;br&gt;...&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;li&gt;&lt;strong&gt;Fase 2: Los Protagonistas 🎭 (Decidan en Pareja)&lt;/strong&gt;&lt;br&gt;...&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;li&gt;&lt;strong&gt;Fase 3: ¡Dando Pasos! 🚶 (Programen Juntos)&lt;/strong&gt;&lt;br&gt;...&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;li&gt;&lt;strong&gt;Fase 4: ¡A Conversar! 💬 (Coordínense)&lt;/strong&gt;&lt;br&gt;...&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;li&gt;&lt;strong&gt;Fase 5: La Chispa Inicial ✨ (Elijan un Inicio)&lt;/strong&gt;&lt;br&gt;...&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;li&gt;&lt;strong&gt;Fase 6: ¡Ensamblando la Escena! 🎬 (Prueben y Ajusten)&lt;/strong&gt;&lt;br&gt;...&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;li&gt;&lt;strong&gt;Fase 7: ¡Proyecto Terminado! 💾 (Automático)&lt;/strong&gt;&lt;br&gt;...&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/ol&gt;</p>
+<p class="p1"><span class="Apple-converted-space">         </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Panel Recursos con nombres de bloques coloreados --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="recursos" class="tab-pane"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;h2&gt;📚 Bloques y Ayuda para Scratch Jr.&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;p&gt;Aquí tienen recursos específicos para Scratch Jr.:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;ul style="list-style-type: '📱 '; padding-left: 30px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;li&gt;&lt;strong&gt;Sitio Oficial y Descarga:&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                     </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;li&gt;&lt;a href="https://www.scratchjr.org/" target="_blank"&gt;ScratchJr.org&lt;/a&gt; (Info, guías y enlaces a tiendas de apps)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                     </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;li&gt;&lt;strong&gt;Guías y Tutoriales (Buscar estos temas):&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                     </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;li&gt;Guía de la interfaz de Scratch Jr.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;li&gt;Tutorial básico de Scratch Jr en español.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;li&gt;Cómo hacer que los personajes se muevan en Scratch Jr.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;li&gt;Cómo usar el bloque 'Decir' (Say) en Scratch Jr.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;li&gt;Usar bloques de inicio (Triggers) en Scratch Jr.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                          </span>&lt;li&gt;Busquen en YouTube: "Tutorial Scratch Jr Español", "Primeros pasos Scratch Jr".&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                     </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;li&gt;&lt;strong&gt;Bloques Clave de Scratch Jr. para Explorar:&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;li&gt;&lt;span class="block-trigger"&gt;Inicio&lt;/span&gt;&lt;strong&gt; (Amarillo):&lt;/strong&gt; &lt;code&gt;Al presionar Bandera Verde&lt;/code&gt;, &lt;code&gt;Al tocar el personaje&lt;/code&gt;.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;li&gt;&lt;span class="block-motion"&gt;Movimiento&lt;/span&gt;&lt;strong&gt; (Azul):&lt;/strong&gt; &lt;code&gt;Mover Derecha/Izq/Arriba/Abajo&lt;/code&gt;, &lt;code&gt;Girar Derecha/Izq&lt;/code&gt;, &lt;code&gt;Saltar&lt;/code&gt;.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;li&gt;&lt;span class="block-looks"&gt;Apariencia&lt;/span&gt;&lt;strong&gt; (Morado):&lt;/strong&gt; &lt;code&gt;Decir&lt;/code&gt;, &lt;code&gt;Crecer&lt;/code&gt;, &lt;code&gt;Encoger&lt;/code&gt;, &lt;code&gt;Mostrar&lt;/code&gt;, &lt;code&gt;Esconder&lt;/code&gt;.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;li&gt;&lt;span class="block-sound"&gt;Sonido&lt;/span&gt;&lt;strong&gt; (Magenta/Rosa):&lt;/strong&gt; &lt;code&gt;Grabar Sonido&lt;/code&gt; (¡pueden añadir sus voces!), &lt;code&gt;Pop&lt;/code&gt;. (Opcional)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;li&gt;&lt;span class="block-control"&gt;Control&lt;/span&gt;&lt;strong&gt; (Naranja):&lt;/strong&gt; &lt;code&gt;Esperar&lt;/code&gt;, &lt;code&gt;Repetir&lt;/code&gt;.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;li&gt;&lt;span class="block-end"&gt;Fin&lt;/span&gt;&lt;strong&gt; (Rojo):&lt;/strong&gt; &lt;code&gt;Fin&lt;/code&gt;, &lt;code&gt;Repetir Por Siempre&lt;/code&gt;.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                   </span>&lt;li&gt;&lt;strong&gt;Conceptos Clave (Simplificados):&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                       </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                          </span>&lt;li&gt;&lt;strong&gt;Secuencia Lógica:&lt;/strong&gt; El orden de los bloques de izquierda a derecha determina qué pasa primero.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                          </span>&lt;li&gt;&lt;strong&gt;Paralelismo Simple:&lt;/strong&gt; Cada personaje puede tener su propia secuencia de bloques que se ejecuta al mismo tiempo.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                          </span>&lt;li&gt;&lt;strong&gt;Interacción Básica:&lt;/strong&gt; Usar "Al tocar" para que algo ocurra cuando el usuario interactúa.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                       </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                   </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Panel Evaluación --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="evaluacion" class="tab-pane"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Contenido sin cambios --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;h2&gt;📊 Revisión en Equipo de la Escena Interactiva&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;p&gt;Observaremos su proyecto y cómo trabajaron juntos, valorando la aplicación de la lógica y la creatividad con las herramientas de Scratch Jr.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;div class="table-responsive"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                     </span>&lt;!-- Tabla de evaluación sin cambios --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                     </span>&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Aspecto de la Escena&lt;/th&gt;&lt;th&gt;¡Bien Logrado! 👍&lt;/th&gt;&lt;th&gt;Se Podría Mejorar 🤔&lt;/th&gt;&lt;th&gt;Faltó Explorar 💡&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                     </span>&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;strong&gt;Uso de 2+ Personajes&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;strong&gt;Movimiento con Sentido&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;strong&gt;Uso de Diálogos (Bloque Decir)&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;strong&gt;Secuencia Lógica e Inicio&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;strong&gt;Interacción Simple&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;strong&gt;Colaboración en Pareja&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;p&gt;&lt;strong&gt;¡Recuerden que explorar, probar y aprender juntos es el mayor éxito!&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">         </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">         </span>&lt;!-- Panel Conclusión --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="conclusion" class="tab-pane"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Contenido sin cambios --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;h2&gt;🏁 ¡Pequeños Bloques, Grandes Ideas!&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;p&gt;¡Felicitaciones a las parejas por crear sus propias escenas interactivas con &lt;strong&gt;Scratch Jr.&lt;/strong&gt;! 🎉 Han usado bloques de colores para darle vida a personajes, hacerlos moverse y hablar. ¡Eso es programar!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;p&gt;Aunque Scratch Jr. es sencillo, el proceso de crear su escena les hizo usar habilidades importantes del &lt;strong&gt;pensamiento lógico y matemático&lt;/strong&gt;:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;ul style="list-style-type: '✔️ '; padding-left: 30px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;li&gt;&lt;strong&gt;Planificación:&lt;/strong&gt; Tuvieron que pensar qué querían que pasara.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;li&gt;&lt;strong&gt;Secuenciación:&lt;/strong&gt; Ordenaron los bloques para que la historia tuviera sentido.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;li&gt;&lt;strong&gt;Resolución de Problemas:&lt;/strong&gt; Si algo no funcionaba, ¡tuvieron que descubrir por qué!&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;li&gt;&lt;strong&gt;Colaboración:&lt;/strong&gt; Trabajaron juntos para lograr un objetivo común.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;p&gt;Estas habilidades son fundamentales en el &lt;strong&gt;Liceo Técnico Profesional&lt;/strong&gt; y en cualquier camino que elijan. La capacidad de pensar de forma estructurada y resolver desafíos es clave.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;p&gt;Scratch Jr. permite hacer mucho más: crear historias con varias páginas (escenas), grabar sus propias voces, hacer personajes más complejos... ¡Sigan explorando si les gustó!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;p&gt;Lo más importante es que experimentaron cómo transformar una idea en una secuencia de instrucciones lógicas. &lt;strong&gt;¿Qué otras ideas se les ocurren ahora que conocen Scratch Jr.?&lt;/strong&gt; 🤔 ¡Sigan desarrollando esa creatividad y lógica!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt; &lt;!-- Fin de tab-content --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Footer con creador --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="footer-note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&lt;em&gt;WebQuest para Segundo Medio - Liceo Técnico Profesional de Río Bueno. ¡Programando ideas en equipo!&lt;/em&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="creator"&gt;Creado por: Álvaro Barra Sáez.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/div&gt; &lt;!-- Fin de webquest-container --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// --- Script JavaScript para las pestañas (Sin cambios) ---</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const tabButtons = document.querySelectorAll('.tab-button');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const tabPanes = document.querySelectorAll('.tab-pane');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>tabButtons.forEach(button =&gt; { button.addEventListener('click', () =&gt; { const targetTab = button.getAttribute('data-tab'); tabButtons.forEach(btn =&gt; btn.classList.remove('active')); tabPanes.forEach(pane =&gt; pane.classList.remove('active')); button.classList.add('active'); const targetPane = document.getElementById(targetTab); if (targetPane) { targetPane.classList.add('active'); } }); });</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.addEventListener('DOMContentLoaded', () =&gt; { if (tabButtons.length &gt; 0 &amp;&amp; tabPanes.length &gt; 0) { const isActiveButton = document.querySelector('.tab-button.active'); if (!isActiveButton) { tabButtons[0].classList.add('active'); const firstTabId = tabButtons[0].getAttribute('data-tab'); const firstPane = document.getElementById(firstTabId); if(firstPane) { firstPane.classList.add('active'); } } } });</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
